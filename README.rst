@@ -1,11 +1,12 @@
 mdx_staticfiles
 ===============
 
+|staticfiles-ci-badge|
+
 .. |staticfiles-ci-badge| image:: https://github.com/CTPUG/mdx_staticfiles/actions/workflows/tests.yml/badge.svg
     :alt: GitHub CI status
     :scale: 100%
-    :target:
-   https://github.com/CTPUG/mdx_staticfiles/actions/workflows/tests.yml
+    :target: https://github.com/CTPUG/mdx_staticfiles/actions/workflows/tests.yml
 
 A Markdown extension to add support for ``django.contrib.staticfiles``.
 
