@@ -20,8 +20,8 @@ class DjangoStaticAssetsProcessor(Postprocessor):
 
 class StaticfilesExtension(Extension):
     def extendMarkdown(self, md, md_globals=None):
-        md.postprocessors.add('staticfiles',
-                              DjangoStaticAssetsProcessor(md), '_end')
+        md.postprocessors.register(
+            DjangoStaticAssetsProcessor(md), 'staticfiles', 20)
 
 
 def makeExtension(**kwargs):
