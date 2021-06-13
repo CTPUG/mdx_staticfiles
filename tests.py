@@ -1,9 +1,9 @@
 from unittest import TestCase
+from xml.etree import ElementTree
 
 import xmltodict
 
 from markdown import Markdown
-from markdown.util import etree
 
 from mdx_staticfiles import (
     DjangoStaticAssetsProcessor, StaticfilesExtension, makeExtension)
@@ -15,13 +15,13 @@ class XmlTestCaseMixin(object):
     """
 
     def mk_doc(self, s):
-        return etree.fromstring(
+        return ElementTree.fromstring(
             "<div>" + s.strip() + "</div>")
 
     def assert_xml_equal(self, a, b):
         self.assertEqual(
-            xmltodict.parse(etree.tostring(a)),
-            xmltodict.parse(etree.tostring(b)))
+            xmltodict.parse(ElementTree.tostring(a)),
+            xmltodict.parse(ElementTree.tostring(b)))
 
     def assert_xmltext_equal(self, a, b):
         self.assert_xml_equal(self.mk_doc(a), self.mk_doc(b))
