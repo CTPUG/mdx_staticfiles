@@ -27,8 +27,8 @@ class XmlTestCaseMixin(object):
         self.assert_xml_equal(self.mk_doc(a), self.mk_doc(b))
 
 
-class TestAssetRE(XmlTestCaseMixin, TestCase):
-    """ Test VariablesPattern and handling of variables. """
+class TestSubstitution(XmlTestCaseMixin, TestCase):
+    """ Test our substitions of django static paths """
 
     def setUp(self):
         self.md = Markdown()
